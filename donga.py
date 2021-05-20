@@ -41,7 +41,6 @@ def show_result():
                           'news_link': 'http://dongascience.donga.com' + news_link[i]['href'],
                           })
     # 'image': image[i]['src']
-        print(lists)
     return render_template('donga_result.html', lists=lists)
 
 
