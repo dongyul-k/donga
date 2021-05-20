@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+<link href="style.css" type="text/css" rel="stylesheet">
+    <style>
+
+        .button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: white;
+  color: black;
+  border: 2px solid #555555;
+}
+
+.button1:hover {
+  background-color: #555555;
+  color: white;
+}
+        body {
+        background-color: slategrey;
+        }
+        input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+.centered { display: table; margin-left: auto; margin-right: auto; }
+    </style>
+    <meta charset="UTF-8">
+    <title>NOAH_donga</title>
+</head>
+<body>
+
+<div class="centered"> <div class="item"><span style="background-color:lightblue">동아사이언스</span></div>
+
+<form action="/donga_middle" method="get">
+
+        <label for="fname"></label>
+
+    <input type="text" id= "fname" name="keyword" placeholder="검색하고 싶은 내용..."
+           style="width:700px;height:50px;font-size:30px;">
+
+    <button class="button button1">확인</button>
+</form>
+
+<h2><marquee width="1000" height="40" behavior="alternate" direction="right" bgcolor="skyblue">Noah's page</marquee></h2>
+<marquee behavior="alternate" direction="up" width="1000" height="80" scrollamount="10">
+    <marquee behavior="alternate" scrollamount="4">●</marquee></marquee>
+
+</div>
+
+
+
+</body>
+</html>

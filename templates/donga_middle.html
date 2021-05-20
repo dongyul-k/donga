@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>donga_middle</title>
+    <link href="style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<h3>{{numbers}} - 개의 {{keyword}} 뉴스가 있습니다</h3>
+<form action="/donga_result" method="get">
+
+        <label for="fname"></label>
+
+    <input type="text" name="keyword" value="{{keyword}}"
+           style="width:700px;height:50px;font-size:30px;">
+
+    <input type="text" id= "fname" name="number" placeholder="원하는 뉴스의 갯수..."
+           style="width:700px;height:50px;font-size:30px;">
+
+
+    <button class="button button1">확인</button>
+</form>
+
+</body>
+</html>
