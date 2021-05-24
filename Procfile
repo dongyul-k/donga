@@ -1,1 +1,1 @@
-web: gunicorn donga:app
+web: gunicorn app:app

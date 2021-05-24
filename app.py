@@ -3,15 +3,15 @@ import math
 from bs4 import BeautifulSoup
 from flask import Flask, render_template, request
 
-web = Flask("NOAH_donga")
+app = Flask("NOAH_donga")
 
 
-@web.route('/')
+@app.route('/')
 def main():
     return render_template('donga_ask.html')
 
 
-@web.route('/donga_middle')
+@app.route('/donga_middle')
 def mid():
     ask_news = request.args.get("keyword")
     html = requests.get(f'http://dongascience.donga.com/search.php?keyword={ask_news}&category=NEWS')
@@ -20,7 +20,7 @@ def mid():
     return render_template('donga_middle.html', numbers=numbers, keyword=ask_news)
 
 
-@web.route('/donga_result')
+@app.route('/donga_result')
 def show_result():
     lists = []
     ask_news = request.args.get('keyword')
@@ -44,4 +44,6 @@ def show_result():
     return render_template('donga_result.html', lists=lists)
 
 
-web.run()
+# control, shift, alt, j
+if __name__ == '__main__':
+    app.run()
