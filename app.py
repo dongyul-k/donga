@@ -3,6 +3,7 @@ import math
 from bs4 import BeautifulSoup
 from flask import Flask, render_template, request
 
+# 여기는 동아 사이언스
 app = Flask("NOAH_donga")
 
 
@@ -29,6 +30,8 @@ def show_result():
     for n in range(number):
         # 검색어 가져오는 부분
         html = requests.get(f'http://dongascience.donga.com/search.php?keyword={ask_news}&category=NEWS&page={n}')
+        html.encoding = 'utf-8'
+        print(html.encoding)
         bs = BeautifulSoup(html.text, 'html.parser')
         title = bs.select('#result_news > div.article-A2 > ul > li > a > dl > dd > span.tit')
         information = bs.select('#result_news > div.article-A2 > ul > li > a > dl > dd > span.cont > div')
@@ -47,3 +50,19 @@ def show_result():
 # control, shift, alt, j
 if __name__ == '__main__':
     app.run()
+
+
+# # 여기는 사회 뉴스
+# html = requests.get('https://www.hani.co.kr/arti/society/home01.html')
+# bs = BeautifulSoup(html.text, 'html.parser')
+# # number = int(input('원하는 뉴스의 번호는?\n>'))
+# # title = bs.select_one('#section-left-scroll-in > div.section-list-area').text
+# title = bs.select_one('#section-left-scroll-in > div.section-list-area > div > div > h4 > a').text
+# # title = bs.select_one(f'#section-left-scroll-in > div.section-list-area > div:nth-child({number}) > div > h4').text
+# #section-left-scroll-in > div.section-list-area > div:nth-child(4) > div > h4
+#
+# information = bs.select_one('#section-left-scroll-in > div.section-list-area').text
+# # for i, j in enumerate(title):
+# print(title)
+
+
